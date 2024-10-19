@@ -387,9 +387,9 @@ export default function Tsf() {
             Make A <b>Quick Call</b> To Claim Your Food Allowance!
           </div>
           <div className="spots-count">Spots remaining: 4</div>
-          <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
-          <a href="tel:+18444340339">             <div className="call-btn" onClick={handleCall}>             CALL (844) 434-0339           </div>           </a>
-          <div className="sub-description">
+         <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
+        <a href="tel:+18444340339">             <div className="call-btn" onClick={handleCall}>            CALL (844) 434-0339           </div>           </a>
+        <div className="sub-title">We Have Reserved Your Spot</div>
           Make sure to ask for medicare benefit for your area in order to receive the <b> Highest Possible Allowance.</b>
           </div>
           <div className="sub-title">We Have Reserved Your Spot</div>
