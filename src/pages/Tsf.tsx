@@ -337,7 +337,7 @@ export default function Tsf() {
 
   return (
     <div>
-{/*      <ToastContainer /> */}
+
       <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
       Senior's Allowance Program 2024
       </div>
@@ -388,7 +388,11 @@ export default function Tsf() {
           </div>
           <div className="spots-count">Spots remaining: 4</div>
          <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
-        <a href="tel:+18444340339">             <div className="call-btn" onClick={handleCall}>            CALL (844) 434-0339           </div>           </a>
+		
+        <a href="tel:+18444340339">      
+		<div className="call-btn" onClick={handleCall}>   
+			CALL (844) 434-0339           </div>      
+	</a>
         <div className="sub-title">We Have Reserved Your Spot</div>
           Make sure to ask for medicare benefit for your area in order to receive the <b> Highest Possible Allowance.</b>
           </div>
@@ -430,18 +434,9 @@ export default function Tsf() {
         </div>
 
 <p>G2 Licensed Agent : Jessica Johanna Rodriguez</p>
-        {/* <p>{zipCode} </p> */}
+      
       </div>
-{/*       <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      /> */}
+
     </div>
   );
 }
