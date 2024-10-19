@@ -108,92 +108,15 @@ export default function Tsf() {
       clearTimeout(delayedEffect);
     };
   }, []);
-  
-  // const [zipCode, setZipCode] = useState("");
-  // useEffect(() => {
-  //   const fetchUserLocation = async () => {
-  //     try {
-  //       const response = await axios.get("https://ipapi.co/json/");
-  //       console.log('response',response.data);
-  //       setZipCode(response.data.postal);
-  //     } catch (error) {
-  //       console.error("Error fetching user location:", error);
-  //     }
-  //   };
 
-  //   fetchUserLocation();
-  // }, []);
   useEffect(() => {
     window.document.title = "Senior's Allowance Program 2024";
 
-    axios
-      .get(process.env.REACT_APP_PROXY + `/visits/8`)
-      .then(({ data }) => {
-        if (data.length === 0) {
-          const visits = {
-            visits: 1,
-            views: 0,
-            calls: 0,
-            positives: 0,
-            negatives: 0,
-          };
-
-          axios
-            .post(
-              process.env.REACT_APP_PROXY + `/visits/create-visits8`,
-              visits
-            )
-            .catch((err) => console.log(err));
-        } else {
-          const _id = data[0]._id;
-          const _visits = data[0].visits;
-          const _views = data[0].views;
-          const _calls = data[0].calls;
-          const _positives = data[0].positives;
-          const _negatives = data[0].negatives;
-
-          const visits = {
-            visits: _visits + 1,
-            views: _views,
-            calls: _calls,
-            positives: _positives,
-            negatives: _negatives,
-          };
-          axios
-            .put(
-              process.env.REACT_APP_PROXY + `/visits/update-visits8/` + _id,
-              visits
-            )
-            .catch((err) => console.log(err));
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  
   }, []);
 
   const handleCall = () => {
-    axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {
-      const _id = data[0]._id;
-      const _visits = data[0].visits;
-      const _views = data[0].views;
-      const _calls = data[0].calls;
-      const _positives = data[0].positives;
-      const _negatives = data[0].negatives;
-      const visits = {
-        visits: _visits,
-        views: _views,
-        calls: _calls + 1,
-        positives: _positives,
-        negatives: _negatives,
-      };
-      axios
-        .put(
-          process.env.REACT_APP_PROXY + `/visits/update-visits8/` + _id,
-          visits
-        )
-        .catch((err) => console.log(err));
-    });
+   
   };
 
   const [quiz, setQuiz] = useState("Are you over the age of 64?  ");
@@ -219,29 +142,7 @@ export default function Tsf() {
       setTimeout(() => {
         setStep("completed");
 
-        axios
-          .get(process.env.REACT_APP_PROXY + `/visits/8`)
-          .then(({ data }) => {
-            const _id = data[0]._id;
-            const _visits = data[0].visits;
-            const _views = data[0].views;
-            const _calls = data[0].calls;
-            const _positives = data[0].positives;
-            const _negatives = data[0].negatives;
-            const visits = {
-              visits: _visits,
-              views: _views + 1,
-              calls: _calls,
-              positives: _positives,
-              negatives: _negatives,
-            };
-            axios
-              .put(
-                process.env.REACT_APP_PROXY + `/visits/update-visits8/` + _id,
-                visits
-              )
-              .catch((err) => console.log(err));
-          });
+      
       }, 1500);
     }
 
@@ -277,27 +178,7 @@ export default function Tsf() {
       topScroll("top");
     }
 
-    axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {
-      const _id = data[0]._id;
-      const _visits = data[0].visits;
-      const _views = data[0].views;
-      const _calls = data[0].calls;
-      const _positives = data[0].positives;
-      const _negatives = data[0].negatives;
-      const visits = {
-        visits: _visits,
-        views: _views,
-        calls: _calls,
-        positives: _positives + 1,
-        negatives: _negatives,
-      };
-      axios
-        .put(
-          process.env.REACT_APP_PROXY + `/visits/update-visits8/` + _id,
-          visits
-        )
-        .catch((err) => console.log(err));
-    });
+   
   };
 
   const handleQuizN = () => {
@@ -312,65 +193,41 @@ export default function Tsf() {
       topScroll("top");
     }
 
-    axios.get(process.env.REACT_APP_PROXY + `/visits/8`).then(({ data }) => {
-      const _id = data[0]._id;
-      const _visits = data[0].visits;
-      const _views = data[0].views;
-      const _calls = data[0].calls;
-      const _positives = data[0].positives;
-      const _negatives = data[0].negatives;
-      const visits = {
-        visits: _visits,
-        views: _views,
-        calls: _calls,
-        positives: _positives,
-        negatives: _negatives + 1,
-      };
-      axios
-        .put(
-          process.env.REACT_APP_PROXY + `/visits/update-visits8/` + _id,
-          visits
-        )
-        .catch((err) => console.log(err));
-    });
+   
   };
 
   return (
     <div>
-
-      <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
-      Senior's Allowance Program 2024
+      <div style={{ marginBottom: '4px' }} className="top-sticky-blue-test2" id="top">
+        Senior's Allowance Program 2024
       </div>
       {step === "process" ? (
         <>
           <div className="main-container-5">
-            <div className="main-descrition-5-5">
+            <div className="main-description-5-5">
               <div className="main-des-title-6-7">
                 <b>
-                Americans Over 65 Can Now Qualify For The $900 Food Allowance Card Under 2024 Medicare Policy!
+                  Americans Over 65 Can Now Qualify For The $900 Food Allowance Card Under 2024 Medicare Policy!
                 </b>
               </div>
-              {/* <img className='topic-img-larger' src = {Headline} alt = "head"/> */}
               <img className="topic-img-middle-z" src={Head_bg} alt="head" />
-              <div  style={{marginTop:'14px'}}className="main-des-5">
-              Americans over 65 years old can claim the 2024 Food Allowance Card that gives them up to $900. Americans can use the funds to fully cover their Food, Prescriptions at Walmart and thousands of other participating stores!
-
+              <div style={{ marginTop: '14px' }} className="main-des-5">
+                Americans over 65 years old can claim the 2024 Food Allowance Card that gives them up to $900. Americans can use the funds to fully cover their Food, Prescriptions at Walmart and thousands of other participating stores!
               </div>
-              <div className="main-des-5"  style={{marginTop:'-5px'}}>
-              If you have not yet claimed your monthly allowance then answer the questions below and once approved <b>you will have your $900 Food Allowance mailed to you within a few days ready for use!</b>
+              <div className="main-des-5" style={{ marginTop: '-5px' }}>
+                If you have not yet claimed your monthly allowance then answer the questions below and once approved <b>you will have your $900 Food Allowance mailed to you within a few days ready for use!</b>
               </div>
-              {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>
-            <div style={{marginTop:'-5px'}} className="survey">
+            <div style={{ marginTop: '-5px' }} className="survey">
               <div className="quiz-5" id="btn">
                 {quiz}
               </div>
-              <div  className="answer">
+              <div className="answer">
                 <div className="answer-btn-5" onClick={handleQuizP}>
-              {yes}
+                  {yes}
                 </div>
                 <div className="answer-btn-5" onClick={handleQuizN}>
-              {no}
+                  {no}
                 </div>
               </div>
             </div>
@@ -387,56 +244,27 @@ export default function Tsf() {
             Make A <b>Quick Call</b> To Claim Your Food Allowance!
           </div>
           <div className="spots-count">Spots remaining: 4</div>
-         <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
-		
-        <a href="tel:+18444340339">      
-		<div className="call-btn" onClick={handleCall}>   
-			CALL (844) 434-0339           </div>      
-	</a>
-        <div className="sub-title">We Have Reserved Your Spot</div>
-          Make sure to ask for medicare benefit for your area in order to receive the <b> Highest Possible Allowance.</b>
-          </div>
+          <div className="tap-direction">👇 TAP BELOW TO CALL 👇</div>
+
+          <a href="tel:+18444340339">
+            <div className="call-btn" onClick={handleCall}>
+              CALL (844) 434-0339
+            </div>
+          </a>
           <div className="sub-title">We Have Reserved Your Spot</div>
           <div className="sub-description">
-            Due to high call volume, your official agent is waiting for only{" "}
-            <b>3 minutes</b>, then your spot will not be reserved.
+            Due to high call volume, your official agent is waiting for only <b>3 minutes</b>, then your spot will not be reserved.
           </div>
           <div className="timer">
             <div className="timer-cell">{min}</div>
-            <div className="timer-cell">:</div>
-            <div className="timer-cell">{second}</div>
+            <div className="timer-cell-s">:</div>
+            <div className="timer-cell">
+              {second < 10 ? `0${second}` : second}
+            </div>
           </div>
         </div>
       )}
-      <div className="footer2">
-      <p>We represent Medicare Advantage HMO, PPO and PFFS organizations and stand-alone PDP prescription drug plans that are contracted with Medicare. Enrollment depends on the plan’s contract renewal."
-				</p>
-				<p>Not all plans offer all of these benefits. Benefits may vary by carrier and location. Limitations and exclusions may apply.
-				</p>
-				<p>Enrollment in Medicare/Medicare Advantage may be limited to certain times of the year unless you qualify for a Special Enrollment Period
-
-				</p>
-				<p>seniorsbenefitshub.org is not connected with or endorsed by the US government or Federal Medicare program. This website is a solicitation for insurance and Medicare Advantage, Part D or Medicare supplement insurance comparison services. Medicare supplement insurance is available to those age 65 or older enrolled in Medicare Parts A and B, and in some states to those under age 65 eligible to Medicare due to disability or end stage renal disease.
-				</p>
-				<p>We do not offer every plan available in your area. Currently we represent [insert number of organizations] organizations which offer [insert number of plans] products in your area. Please contact Medicare.gov, 1–800–MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
-        <div className="terms2">
-
-        <Link to="/terms-and-conditions">Terms & Conditions</Link> | 
-        <Link to="/privacy-policy">Privacy Policy</Link>
-        </div>
-        <div>
-        
-        <hr/>
-        </div>
-        <div className="copyright">
-          
-        
-        </div>
-
-<p>G2 Licensed Agent : Jessica Johanna Rodriguez</p>
-      
-      </div>
-
+     
     </div>
   );
 }
