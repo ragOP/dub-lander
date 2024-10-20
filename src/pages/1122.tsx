@@ -31,7 +31,7 @@ export default function Abc() {
  
 
   useEffect(() => {
-    window.document.title = "Seniors Saving Journal";
+    window.document.title = "Seniors Saving ";
 
 
   }, []);
@@ -120,8 +120,8 @@ export default function Abc() {
   return (
     <div>
      {/* <ToastContainer /> */}
-      <div style={{marginBottom:'4px'}} className="top-sticky-blue-test2" id="top">
-      Seniors Saving Journal
+      <div className="top-sticky-blue-test2" id="top">
+      Seniors Benefits 
       </div>
       {step === "process" ? (
         <>

@@ -78,7 +78,7 @@ height: 100vh;
 }
 .top-sticky-blue-test2 {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 50px; /* Fixed height */
   width: 100%; /* You can set a fixed width or use a percentage */
@@ -88,6 +88,7 @@ height: 100vh;
   font-size: 1.1rem;
   font-weight: 800;
   text-align: center;
+  padding-left: 16px; 
 }
 
 @media (max-width: 768px) {

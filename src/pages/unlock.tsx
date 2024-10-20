@@ -88,7 +88,7 @@ const topScroll = (id: any) => {
   scrollTo({ id });
 };
 
-const handleQuizP = () => {
+const handleQuizYes = () => {
   topScroll("btn");
   if (quiz === "Are you over the age of 64?  ") {
     setYes("Yes")
@@ -103,7 +103,7 @@ const handleQuizP = () => {
  
 };
 
-const handleQuizN = () => {
+const handleQuizNo = () => {
   topScroll("btn");
   if (quiz === "Are you over the age of 60?  ") {
     setYes("Yes")
@@ -122,7 +122,7 @@ const handleQuizN = () => {
     <div>
      {/* <ToastContainer /> */}
      <div  className="top-sticky-blue-test2" id="top">
-     <img src={aa} alt="Description of " style={{ height: '74%', maxWidth: '74%', }} />
+     Seniors Benefits 
   </div>
 
       {step === "process" ? (
@@ -150,32 +150,15 @@ const handleQuizN = () => {
               {/* <div className='main-des-5' style = {{marginTop:"1rem"}}><b>Simplemente responda las siguientes preguntas:</b></div> */}
             </div>
             <div style={{marginTop:'-5px'}} className="survey">
-              {/* <div className="quiz-5" id="btn">
-                {quiz}
-              </div>
-              <div  className=
-              "answer">
-              {quiz === "Select Your Age:  " && <div className="answer-btn-5" onClick={handleQuizP} style={{"textTransform": "capitalize"}}>
-              {fourth}
-                </div>}
-                <div className="answer-btn-5" onClick={handleQuizP}>
-              {yes}
-                </div>
-                <div className="answer-btn-5" onClick={handleQuizN}>
-              {no}
-                </div>
-               <div className="answer-btn-5" onClick={handleQuizP}>
-              {third}
-                </div>
-              </div> */}
+             
                <div className="quiz-5" id="btn">
                 {quiz}
               </div>
               <div  className="answer">
-                <div className="answer-btn-5" onClick={handleQuizP}>
+                <div className="answer-btn-5" onClick={handleQuizYes}>
               {yes}
                 </div>
-                <div className="answer-btn-5" onClick={handleQuizN}>
+                <div className="answer-btn-5" onClick={handleQuizNo}>
               {no}
                 </div>
               </div>
